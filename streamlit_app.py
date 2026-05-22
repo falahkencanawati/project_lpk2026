@@ -3,16 +3,11 @@ import streamlit as st
 st.title("🎈 project kelas A")
 import streamlit as st
 
-st.markdown("*Streamlit* is **really** ***cool***.")
-st.markdown('''
-    :red[Streamlit] :orange[can] :green[write] :blue[text] :violet[in]
-    :gray[pretty] :rainbow[colors] and :blue-background[highlight] text.''')
-st.markdown("Here's a bouquet &mdash;\
-            :tulip::cherry_blossom::rose::hibiscus::sunflower::blossom:")
+a, b = st.columns(2)
+c, d = st.columns(2)
 
-multi = '''If you end a line with two spaces,
-a soft return is used for the next line.
+a.metric("Temperature", "30°F", "-9°F", border=True)
+b.metric("Wind", "4 mph", "2 mph", border=True)
 
-Two (or more) newline characters in a row will result in a hard return.
-'''
-st.markdown(multi)
+c.metric("Humidity", "77%", "5%", border=True)
+d.metric("Pressure", "30.34 inHg", "-2 inHg", border=True)
