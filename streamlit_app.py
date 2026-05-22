@@ -1,13 +1,16 @@
 import streamlit as st
 
 st.title("🎈 project kelas A")
+import pandas as pd
 import streamlit as st
 
-a, b = st.columns(2)
-c, d = st.columns(2)
-
-a.metric("Temperature", "30°F", "-9°F", border=True)
-b.metric("Wind", "4 mph", "2 mph", border=True)
-
-c.metric("Humidity", "77%", "5%", border=True)
-d.metric("Pressure", "30.34 inHg", "-2 inHg", border=True)
+confusion_matrix = pd.DataFrame(
+    {
+        "Predicted naely": [2, 8, 6, 12],
+        "Predicted pai": [9, 1, 8, 7],
+        "Predicted dika": [8, 9, 7, 6],
+        "Predicted falah": [5, 7, 9, 19],
+    },
+    index=["Actual naely", "Actual pai", "Actual dika", "Actual falah"],
+)
+st.table(confusion_matrix)
